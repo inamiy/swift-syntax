@@ -32,6 +32,11 @@ extension _SyntaxBase {
     return SyntaxBaseChildren(self)
   }
 
+  /// The number of children, `present` or `missing`, in this node.
+  var numberOfChildren: Int {
+    return raw.numberOfChildren
+  }
+
   /// Whether or not this node is marked as `present`.
   var isPresent: Bool {
     return raw.isPresent
@@ -339,6 +344,11 @@ extension Syntax {
   /// A sequence over the `present` children of this node.
   public var children: SyntaxChildren {
     return SyntaxChildren(base)
+  }
+
+  /// The number of children, `present` or `missing`, in this node.
+  public var numberOfChildren: Int {
+    return base.numberOfChildren
   }
 
   /// Whether or not this node is marked as `present`.
